@@ -28,5 +28,3 @@ Para executar, além de clonar este repositório, é necessário substituir algu
 * SenhaUsuario é a senha do usuário que possui acesso à base de dados;
 * Encrypt pode ser mantido como false.
 
-
-

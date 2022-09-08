@@ -1,9 +1,12 @@
-﻿namespace APIProdutos.Core.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace APIProdutos.Core.Model
 {
     public class Produto
     {
         public long Id { get; set; }
-
+       
+        [MinLength(5)]
         public string Descricao { get; set; }
 
         public decimal Preco { get; set; }

@@ -17,6 +17,7 @@ namespace APIProdutos.Core.Interfaces
         public bool DeleteProduto(long id);
 
         public bool UpdateProduto(long id, Produto produto);
+        public Produto GetProduto(long id);
 
 
     }

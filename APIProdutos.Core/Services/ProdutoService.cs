@@ -33,8 +33,16 @@ namespace APIProdutos.Core.Services
 
         public bool UpdateProduto(long id, Produto produto)
         {
+            produto.Id = id;
+
             return (_produtoRepository.UpdateProduto(id, produto));
+
         }
+        public Produto GetProduto(long id)
+        {
+            return _produtoRepository.GetProduto(id);
+        }
+
 
     }
 }

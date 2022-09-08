@@ -90,6 +90,20 @@ namespace APIProdutos.Infra.Data
             return conn.Execute(query, parameters) == 1;
         }
 
+        public Produto GetProduto(long id)
+        {
+            var query = "SELECT * FROM Produtos where id = @id";
+
+            var parameters = new DynamicParameters(new
+            {
+                id
+            });
+
+            using var conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+
+            return conn.QueryFirstOrDefault<Produto>(query, parameters);
+        }
+
 
     }
 }

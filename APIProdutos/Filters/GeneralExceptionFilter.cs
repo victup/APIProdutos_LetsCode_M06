@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Data.SqlClient;
 
 namespace APIProdutos.Filters
 {
@@ -32,6 +33,7 @@ namespace APIProdutos.Filters
                     context.Result = new ObjectResult(problem);
                     break;
             }
+            
         }
     }
 }

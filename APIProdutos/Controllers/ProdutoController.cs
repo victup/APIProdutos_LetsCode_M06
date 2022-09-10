@@ -3,13 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using APIProdutos.Core.Interfaces;
 using APIProdutos.Core.Model;
 using APIProdutos.Filters;
+using Microsoft.AspNetCore.Cors;
 
 [ApiController]
 [Route("[controller]")]
 [TypeFilter(typeof(LogResourceFilter))]
+[EnableCors("PolicyCors")]
 public class ProdutoController : ControllerBase
 {
-    public List<Produto> ProdutoList { get; set; }
 
     public IProdutoService _produtoService;
 
@@ -36,7 +37,7 @@ public class ProdutoController : ControllerBase
 
     [HttpGet("/produto")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [TypeFilter(typeof(LogAuthorizationFilter))]
+    //[TypeFilter(typeof(LogAuthorizationFilter))]
     public ActionResult<List<Produto>> GetProdutos()
     {
         Console.WriteLine("Iniciando");

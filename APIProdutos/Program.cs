@@ -5,6 +5,18 @@ using APIProdutos.Infra.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PolicyCors",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7236");
+            policy.WithHeaders("x-victor");
+            policy.AllowAnyMethod();
+            //policy.WithMethods("GET", "POST");
+        });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -36,6 +48,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("PolicyCors");
 
 app.MapControllers();
 

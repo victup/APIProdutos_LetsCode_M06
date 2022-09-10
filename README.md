@@ -1,5 +1,13 @@
 # API Produtos
 
+Ps. Esta API pode ser consumida através do projeto do link abaixo, dentre os meus repositórios. 
+
+> APIProdutoConsumo: https://github.com/victup/APIProdutoConsumo_LetsCode_M06
+
+O guia para consumir, está descrito no Readme do repo APIProdutoConsumo
+
+## Sobre a API Produtos
+
 ![image](https://user-images.githubusercontent.com/38474570/188255600-17c50a29-ccc1-4d4f-8490-821506b93fa9.png)
 
 Esta API efetua um CRUD de produtos.

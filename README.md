@@ -35,3 +35,18 @@ Para executar, além de clonar este repositório, é necessário substituir algu
 * NomeUsuario é o nome do usuário com permissão de acesso na base de dados;
 * SenhaUsuario é a senha do usuário que possui acesso à base de dados;
 * Encrypt pode ser mantido como false.
+
+## Autenticação e Autorização
+  É necessário gerar um Token na API de Clientes, e inserir antes de executar qualquer método da API de Eventos. 
+  
+  Baixe a APIClientes para gerar o Token, leia o título <b> Geração de Token </b> na APIClientes
+  > Repositório : https://github.com/victup/APIClientes_LetsCode_M06
+  
+  ![image](https://user-images.githubusercontent.com/38474570/190838931-f920e14b-9c07-47a5-a611-d1fd2a11e236.png)
+
+Preencha com o token e clique em Authorize
+
+  ![image](https://user-images.githubusercontent.com/38474570/190838939-f63e3b99-f7c5-4b96-a75f-0f1ec5b5d3df.png)
+  
+  Pronto, agora dependendo de sua permissão com base no token gerado na APIClientes você poderá utilizar os métodos da EventAPI
+

@@ -4,11 +4,13 @@ using APIProdutos.Core.Interfaces;
 using APIProdutos.Core.Model;
 using APIProdutos.Filters;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("[controller]")]
 [TypeFilter(typeof(LogResourceFilter))]
 [EnableCors("PolicyCors")]
+[Authorize]
 public class ProdutoController : ControllerBase
 {
 
@@ -25,6 +27,7 @@ public class ProdutoController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<Produto> GetProduto(string descricao)
     {
+
         Console.WriteLine("Iniciando");
         var produtos = _produtoService.GetProduto(descricao);
         if (produtos == null)
@@ -38,9 +41,12 @@ public class ProdutoController : ControllerBase
     [HttpGet("/produto")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     //[TypeFilter(typeof(LogAuthorizationFilter))]
+    [Authorize(Roles = "admin")]
     public ActionResult<List<Produto>> GetProdutos()
     {
-        Console.WriteLine("Iniciando");
+        var usuarioToken = HttpContext.User.Claims.FirstOrDefault(x => x.Type  == "teste");
+
+        Console.WriteLine($"Iniciando, usuario: {usuarioToken}");
         return Ok(_produtoService.GetProdutos());
     }
 

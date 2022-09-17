@@ -4,7 +4,7 @@ Ps. Esta API pode ser consumida através do projeto do link abaixo, dentre os me
 
 > APIProdutoConsumo: https://github.com/victup/APIProdutoConsumo_LetsCode_M06
 
-O guia para consumir, está descrito no Readme do repo APIProdutoConsumo
+O guia para consumir, está descrito no Readme do repo APIProdutoConsumo 
 
 ## Sobre a API Produtos
 
